@@ -1,0 +1,77 @@
+/* Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.cv-wrapper {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Başlık */
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -1px;
+}
+
+/* Görselleri Yan Yana Getiren Flexbox Yapısı */
+.image-container {
+    display: flex;       /* Yan yana dizilimi sağlar */
+    gap: 20px;          /* Görseller arasındaki boşluk */
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.image-box {
+    flex: 1;            /* Her iki kutunun eşit genişlikte olmasını sağlar */
+}
+
+.image-box img {
+    width: 100%;        /* Kutunun içine tam sığması için */
+    height: auto;
+    border-radius: 12px;
+    background-color: #f7f7f2; /* Görsel yokken dolgu rengi */
+    display: block;
+    object-fit: cover;
+}
+
+/* Metin Alanları */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.text-block p {
+    color: #a0a0a0;     /* Görseldeki gibi açık gri tonu */
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    word-break: break-all;
+    margin-bottom: 2px;
+}
+
+/* Mobil Uyumluluk: Ekran küçülünce görseller alt alta gelir */
+@media (max-width: 600px) {
+    .image-container {
+        flex-direction: column;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+}
